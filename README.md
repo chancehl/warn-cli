@@ -20,6 +20,9 @@ Note: anything in the past will be in grey and anything in the future will be in
 # clone this repo
 git clone https://github.com/chancehl/warn-cli.git
 
+# change directories
+cd ./warn-cli
+
 # install dependencies
 npm install
 
