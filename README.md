@@ -12,7 +12,7 @@ Options:
   -h, --help              display help for command
 ```
 
-# Getting started
+## Getting started
 
 ```
 # clone this repo
@@ -26,4 +26,16 @@ npm run build
 
 # start the cli (if you want to only execute the code once you can pass the --once flag to the program)
 npm run start
+```
+
+## Example output
+
+```
+╔═══════════════════╤═══════════════════╤══════════════════╤════════════════════╗
+║ Location          │ Layoff start date │ No. of employees │ Notice received on ║
+╟───────────────────┼───────────────────┼──────────────────┼────────────────────╢
+║ Seattle, Bellevue │ 3/19/2023         │ 2320             │ 1/18/2023          ║
+╟───────────────────┼───────────────────┼──────────────────┼────────────────────╢
+║ Seattle           │ 12/1/2022         │ 159              │ 9/7/2022           ║
+╚═══════════════════╧═══════════════════╧══════════════════╧════════════════════╝
 ```
