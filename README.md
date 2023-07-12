@@ -14,6 +14,8 @@ Options:
 
 ## Getting started
 
+Note: anything in the past will be in grey and anything in the future will be in red
+
 ```
 # clone this repo
 git clone https://github.com/chancehl/warn-cli.git
