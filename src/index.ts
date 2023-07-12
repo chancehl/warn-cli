@@ -7,6 +7,7 @@ const program = new Command()
 
 program
     .version('0.0.1')
+    .description('A simple CLI for crawling the WA WARN website for Amazon layoff postings')
     .option('-o, --once', 'This will only run the scraping process once')
     .option('-i, --interval <value>', 'The interval to run the program in milliseconds')
     .parse(process.argv)
