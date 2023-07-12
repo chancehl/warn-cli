@@ -4,7 +4,7 @@ import dayjs from 'dayjs'
 
 import { scrapeDataFromWARNWebsite } from './scrape'
 
-export async function run() {
+export async function run(next?: string) {
     const results = await scrapeDataFromWARNWebsite()
 
     const headers = ['Location', 'Layoff start date', 'No. of employees', 'Notice received on']
@@ -40,4 +40,8 @@ export async function run() {
 
     console.clear()
     console.log(table(coloredResults))
+
+    if (next) {
+        console.log(`Next run at ${chalk.green(next)}`)
+    }
 }

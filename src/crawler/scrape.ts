@@ -10,7 +10,7 @@ export async function scrapeDataFromWARNWebsite() {
     let results = []
 
     // Setup
-    const browser = await chromium.launch()
+    const browser = await chromium.launch({ headless: true })
     const context = await browser.newContext({ userAgent: USER_AGENT })
     const page = await context.newPage()
 

@@ -1,4 +1,5 @@
 import { Command } from 'commander'
+import dayjs from 'dayjs'
 
 import { run } from './crawler'
 
@@ -7,19 +8,34 @@ const program = new Command()
 program
     .version('0.0.1')
     .option('-o, --once', 'This will only run the scraping process once')
-    .option('-i, --interval <value>', 'The interval to run the program')
+    .option('-i, --interval <value>', 'The interval to run the program in milliseconds')
     .parse(process.argv)
 
 const options = program.opts()
+
+async function registerInterval(interval: number) {
+    // execute every 30 minutes after or however often the user tells us to run
+    setInterval(() => {
+        const next = dayjs(new Date()).add(interval, 'milliseconds').toISOString()
+
+        run(next)
+    }, interval)
+}
 
 if (options.once) {
     ;(async function () {
         await run()
     })()
 } else {
-    // execute immediately
-    run()
+    // capture interval
+    const interval = options.interval ?? 1000 * 60 * 10
 
-    // execute every 10 seconds after
-    setInterval(run, options.interval ?? 3000)
+    // calculate next run
+    const next = dayjs(new Date()).add(interval, 'milliseconds').toISOString()
+
+    // register callback
+    registerInterval(interval)
+
+    // execute immediately
+    run(next)
 }
