@@ -1,0 +1,25 @@
+{
+  "name": "warn-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/index.js",
+    "build": "npx tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.4.1",
+    "prettier": "^3.0.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "commander": "^11.0.0",
+    "dayjs": "^1.11.9",
+    "playwright": "^1.36.0",
+    "table": "^6.8.1"
+  }
+}
