@@ -14,6 +14,8 @@ program
 
 const options = program.opts()
 
+const DEFAULT_INTERVAL = 1000 * 60 * 30
+
 async function registerInterval(interval: number) {
     // execute every 30 minutes after or however often the user tells us to run
     setInterval(() => {
@@ -29,7 +31,7 @@ if (options.once) {
     })()
 } else {
     // capture interval
-    const interval = options.interval ?? 1000 * 60 * 10
+    const interval = options.interval ?? DEFAULT_INTERVAL
 
     // calculate next run
     const next = dayjs(new Date()).add(interval, 'milliseconds').toISOString()
